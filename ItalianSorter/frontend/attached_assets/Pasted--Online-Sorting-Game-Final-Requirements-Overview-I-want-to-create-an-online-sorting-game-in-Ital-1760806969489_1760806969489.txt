@@ -1,0 +1,59 @@
+🎮 Online Sorting Game – Final Requirements
+Overview
+I want to create an online sorting game in Italian for my class.
+Each student will access the same link, enter their name, play the game, get a score, and appear on a leaderboard.
+The leaderboard ranking rules are:
+1️⃣ First, sort by number of operations (comparisons + swaps) — fewer operations = better rank.
+2️⃣ If two players have the same number of operations, the shorter time ranks higher.
+Once a student appears on the leaderboard, they cannot replay or change their score.
+Features
+Welcome screen (Schermata di benvenuto)
+Shows the text: “Benvenuto al nostro gioco, inserisci il tuo nome.”
+The user enters their name.
+Each name can submit only once.
+Ready screen (Schermata di preparazione)
+Displays: “Pronto? Via! 1, 2, 3…”
+After the countdown, the game starts automatically.
+Game interface (Interfaccia di gioco)
+Displays 20 random numbers.
+The user chooses one number as the pivot:
+Numbers smaller than the pivot move to the left.
+Numbers larger than the pivot move to the right.
+The player repeats this process until the array is completely sorted in ascending order.
+Game completion logic
+When the array is fully sorted:
+The game ends automatically.
+The player cannot make further moves.
+The system records the player’s results.
+Scoring system (Sistema di punteggio)
+The final score is based on two values:
+Number of operations (comparisons + swaps, like QuickSort)
+Elapsed time
+Ranking order:
+1️⃣ Fewer operations rank higher
+2️⃣ If operations are equal, shorter time ranks higher
+Real-time display during the game:
+Tempo (time elapsed)
+Operazioni (number of operations)
+Punteggio (score status or progress)
+Leaderboard (Classifica)
+Updates automatically every 3 seconds.
+Displays:
+Student’s name
+Number of operations
+Time taken
+Ranking rule shown clearly on the page:
+“Classifica basata sul numero di operazioni e, in caso di parità, sul tempo impiegato.”
+Top 3 players highlighted in red and bold.
+Once a student’s result appears here, they cannot replay or resubmit.
+Backend (Express server)
+POST /submit → receives { name, operations, time } and saves the result
+If the same name already exists, reject further submissions.
+GET /ranking-data → returns leaderboard data sorted by
+operations (ascending),
+then time (ascending if operations are equal).
+Technology Stack
+Frontend: HTML + CSS + JavaScript (in Italian language)
+Backend: Node.js + Express
+Data storage: In-memory array (no database required)
+Hosting platform: Replit, Glitch, or CodeSandbox

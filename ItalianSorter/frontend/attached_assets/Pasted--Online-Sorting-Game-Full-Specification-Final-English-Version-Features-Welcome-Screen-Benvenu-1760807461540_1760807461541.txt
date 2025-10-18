@@ -1,0 +1,48 @@
+🎮 Online Sorting Game – Full Specification (Final English Version)
+Features
+Welcome Screen (Benvenuto al nostro gioco)
+Displays the message: “Benvenuto al nostro gioco, inserisci il tuo nome.”
+The student enters their name.
+The system validates that the name is unique — duplicate submissions are not allowed.
+Countdown Screen (Pronto? Via! 1, 2, 3...)
+A short countdown is shown before the game automatically starts.
+Interactive Sorting Game (Based on QuickSort Logic)
+The game displays 20 random numbers.
+The student selects one number as the pivot.
+The system compares all other numbers to the pivot:
+Numbers smaller than the pivot move to the left.
+Numbers larger than the pivot move to the right.
+The numbers are rearranged accordingly.
+The student then selects another pivot and repeats the process.
+This continues until the entire array is fully sorted (ordinato) in ascending order.
+Real-Time Display During Gameplay
+The game continuously displays:
+Tempo (Time) – elapsed time since start
+Operazioni (Operations) – total number of comparisons and swaps
+Punteggio / Stato del gioco (Score or Game Status) – current sorting progress
+Automatic Game Completion
+When the array becomes completely sorted, the game automatically ends.
+The user cannot make any further selections after completion.
+Scoring and Ranking Rules
+Player results are ranked based on:
+1️⃣ Total number of operations (comparisons + swaps) – fewer is better
+2️⃣ Elapsed time – if two players have the same operation count, the faster one ranks higher.
+Live Leaderboard (Classifica)
+Updates automatically every 3 seconds.
+Displays each player’s:
+Name
+Number of operations
+Time taken
+The leaderboard must clearly state the ranking rule:
+“Classifica basata sul numero di operazioni e, in caso di parità, sul tempo impiegato.”
+The top 3 players are shown in red and bold.
+Once a student’s result appears on the leaderboard, they cannot replay or resubmit.
+Data Submission and Validation
+The backend uses Express (Node.js).
+POST /submit: receives { name, operations, time };
+if the name already exists, reject the submission.
+GET /ranking-data: returns all players sorted by operations (ascending) and then by time (ascending).
+Interface and Design
+The entire interface is in Italian.
+Clean, student-friendly UI with clear visual feedback during sorting actions.
+Simple, modern, and intuitive layout to help students understand sorting visually.
